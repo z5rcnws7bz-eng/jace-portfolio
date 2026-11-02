@@ -88,11 +88,13 @@ const RAY_COLORS  = ['#8a7560','#7a6550','#6a5540','#9a8570','#b0a090','#7d6d5d'
 function randColor(palette) { return palette[Math.floor(Math.random() * palette.length)]; }
 
 // ── Core draw function ────────────────────────────────────────────────────
-function drawFish({ bitmap, colors, charPool, x, y, flipX = false, flipY = false, scale = 1 }) {
+function drawFish({ bitmap, colors, charPool, x, y, flipX = false, flipY = false, scale = 1, alpha = 1 }) {
   const rows = bitmap.length;
   const cols = bitmap[0].length;
   const cs = Math.round(CELL * scale);
 
+  ctx.save();
+  ctx.globalAlpha = alpha;
   ctx.font = `${cs - 1}px monospace`;
   ctx.textBaseline = 'top';
 
@@ -106,16 +108,17 @@ function drawFish({ bitmap, colors, charPool, x, y, flipX = false, flipY = false
       ctx.fillText(pick(charPool), x + c * cs, y + r * cs);
     }
   }
+  ctx.restore();
 }
 
 // ── Scatter some tiny floating chars around a fish for texture ────────────
-function scatter({ colors, charPool, cx, cy, radius, count }) {
+function scatter({ colors, charPool, cx, cy, radius, count, alpha = '55' }) {
   ctx.font = `10px monospace`;
   ctx.textBaseline = 'top';
   for (let i = 0; i < count; i++) {
     const angle = Math.random() * Math.PI * 2;
     const dist  = Math.random() * radius;
-    ctx.fillStyle = randColor(colors) + '55'; // semi-transparent
+    ctx.fillStyle = randColor(colors) + alpha; // semi-transparent
     ctx.fillText(pick(charPool), cx + Math.cos(angle) * dist, cy + Math.sin(angle) * dist);
   }
 }
@@ -126,7 +129,50 @@ function drawAll() {
 
   const W = canvas.width;
   const H = canvas.height;
+  const isMobile = W < 768;
 
+  if (isMobile) {
+    // ── Mobile layout:
+    // Keep designs clearly present, but completely clear of the top-left area
+    // where the name (h1), subtitle, nav links, and bio text reside.
+
+    // 1. Top-right: orca safely tucked in the upper-right corner away from left-aligned name
+    const orcaScale = 0.72;
+    const orcaW = ORCA_BITMAP[0].length * CELL * orcaScale;
+    const orcaX = W - orcaW - 10;
+    drawFish({ bitmap: ORCA_BITMAP, colors: ORCA_COLORS, charPool: orcaChars,
+               x: orcaX, y: 12, flipX: true, scale: orcaScale, alpha: 0.65 });
+    scatter({ colors: ORCA_COLORS, charPool: orcaChars,
+              cx: W - 45, cy: 55, radius: 28, count: 8, alpha: '33' });
+
+    // 2. Lower-right: second koi floating in open space above stingray
+    const koi2Scale = 0.68;
+    const koi2W = KOI2_BITMAP[0].length * CELL * koi2Scale;
+    const koi2Y = Math.max(H * 0.58, H - 230);
+    drawFish({ bitmap: KOI2_BITMAP, colors: KOI2_COLORS, charPool: koiChars,
+               x: W - koi2W - 16, y: koi2Y, scale: koi2Scale, alpha: 0.7 });
+
+    // 3. Bottom-left: koi facing right in the bottom corner (below arrow nav)
+    const bKoiScale = 0.72;
+    const bKoiH = KOI_BITMAP.length * CELL * bKoiScale;
+    drawFish({ bitmap: KOI_BITMAP, colors: KOI_COLORS, charPool: koiChars,
+               x: 14, y: H - bKoiH - 16, flipX: true, scale: bKoiScale, alpha: 0.8 });
+    scatter({ colors: KOI_COLORS, charPool: koiChars,
+              cx: 65, cy: H - bKoiH / 2 - 16, radius: 32, count: 10, alpha: '44' });
+
+    // 4. Bottom-right: stingray in the bottom corner (below arrow nav)
+    const rayScale = 0.72;
+    const rayW = STINGRAY_BITMAP[0].length * CELL * rayScale;
+    const rayH = STINGRAY_BITMAP.length    * CELL * rayScale;
+    drawFish({ bitmap: STINGRAY_BITMAP, colors: RAY_COLORS, charPool: stingrayChars,
+               x: W - rayW - 14, y: H - rayH - 16, scale: rayScale, alpha: 0.75 });
+    scatter({ colors: RAY_COLORS, charPool: stingrayChars,
+              cx: W - rayW / 2 - 14, cy: H - rayH / 2 - 16, radius: 32, count: 8, alpha: '44' });
+
+    return;
+  }
+
+  // ── Desktop layout (W >= 768px) ──────────────────────────────────────────
   // Top-left: large koi
   drawFish({ bitmap: KOI_BITMAP, colors: KOI_COLORS, charPool: koiChars,
              x: 10, y: 10, scale: 1 });
