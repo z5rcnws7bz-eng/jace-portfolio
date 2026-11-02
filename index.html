@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jace roman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Same font feel as cherylaurelia.com — clean serif for name, system sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Static fish canvas (frozen, always behind text) ────────────────── -->
+  <canvas id="fish-canvas"></canvas>
+
+  <!-- ── Main page ─────────────────────────────────────────────────────── -->
+  <div class="page">
+
+    <!-- Name + subtitle -->
+    <h1>jace e. roman</h1>
+    <p class="subtitle">a developer, a researcher, and an athlete.</p>
+
+    <!-- Nav -->
+    <nav>
+      <a href="#about"   class="nav-link active">about</a>
+      <a href="#projects" class="nav-link">projects</a>
+      <a href="#work"    class="nav-link">work</a>
+      <a href="#contact" class="nav-link">contact</a>
+    </nav>
+
+    <!-- ── ABOUT section ─────────────────────────────────────────────── -->
+    <section id="about" class="section">
+      <p class="bio">
+        <!-- EDIT: your own intro sentence -->
+        i'm jace — a developer, a researcher, and an athlete.
+      </p>
+
+      <p class="section-label">recently</p>
+
+      <div class="recently-box">
+        <!-- EDIT: your own experience lines -->
+        <p>software engineer and medicine undergrad at <img src="https://www.google.com/s2/favicons?domain=temple.edu&sz=32" class="favicon-icon" alt="Temple University" /> <a href="https://temple.edu" target="_blank" rel="noopener">Temple University</a></p>
+        <p>built <a href="#">hemodyn</a></p>
+        <p class="sub">↳ A Physics-Guided Machine Learning Framework for Early Prediction of Hemodynamic Changes Across Progressive Arterial Stenosis</p>
+        <p>radio oncology shadowing at <img src="https://www.google.com/s2/favicons?domain=templehealth.org&sz=32" class="favicon-icon" alt="Temple Hospital" /> <a href="https://www.templehealth.org" target="_blank" rel="noopener">Temple Hospital</a> · summer intern at <img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=32" class="favicon-icon" alt="UPenn" /><a href="https://www.seas.upenn.edu" target="_blank" rel="noopener">UPenn Engineering & Applied Sciences</a></p>
+      </div>
+
+      <!-- EDIT: a fun personal fact -->
+      <p class="bio-extra">i also like <a href="#">drawing</a> (2M+ views on TikTok)</p>
+    </section>
+
+    <!-- ── PROJECTS section ───────────────────────────────────────────── -->
+    <section id="projects" class="section hidden">
+      <p class="section-label">projects</p>
+      <div class="recently-box">
+        <p><a href="https://temple-bei-v2.vercel.app/" target="_blank" rel="noopener">philadelphia bei</a></p>
+        <p class="sub">↳ Designed and developed a full-stack web platform for Temple University's Brain Exercise Initiative (BEI), featuring user authentication, role-based dashboards, volunteer management, event coordination, and database integration to streamline nonprofit operations.</p>
+        <p class="sub">↳ Full-Stack Development · Supabase · PostgreSQL · User Authentication · Role-Based Access Control (RBAC) · Database Design · Vercel Deployment · Responsive Web Design</p>
+        <p><a href="https://github.com/z5rcnws7bz-eng/HemoDyn-Ai-v2/blob/main/README.md" target="_blank" rel="noopener">HemoDyn AI</a></p>
+        <p class="sub">↳ Developed a computational cardiovascular hemodynamics research framework integrating computational fluid dynamics (CFD), 3D vascular modeling, and machine learning to simulate blood flow, analyze wall shear stress, and investigate vascular stenosis.</p>
+        <p class="sub">↳ Python · SimVascular · Computational Fluid Dynamics (CFD) · Finite Element Analysis · MPI · Scientific Computing · 3D Vascular Modeling · Physics-Guided Machine Learning</p>
+      </div>
+    </section>
+
+    <!-- ── WORK section ───────────────────────────────────────────────── -->
+    <section id="work" class="section hidden">
+      <p class="section-label">work</p>
+      <div class="recently-box">
+
+        <p><img src="https://www.google.com/s2/favicons?domain=mayoclinic.org&sz=32" class="favicon-icon" alt="Mayo Clinic" /> <strong>Mayo Clinic College of Medicine and Science</strong> — Undergraduate Plummer Scholar (UPS)</p>
+        <p class="sub">↳ Selected for Mayo Clinic's Undergraduate Plummer Scholars Academic Year Program, engaging with physicians, medical students, and healthcare leaders through mentorship, medical career exploration, and professional development in preparation for medical school.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=templehealth.org&sz=32" class="favicon-icon" alt="Temple Health" /> <strong>Temple University Hospital</strong> — Radiation Oncology Shadowing Intern</p>
+        <p class="sub">↳ Gained clinical experience in radiation oncology, observing radiation therapy procedures, cancer treatment planning, and multidisciplinary healthcare workflows.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=32" class="favicon-icon" alt="UPenn" /> <strong>University of Pennsylvania</strong> — Engineering Academy Youth Leader</p>
+        <p class="sub">↳ Mentored international students exploring engineering, biotechnology, nanotechnology, and AI-driven medical innovations through Penn Engineering's summer academy.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=target.com&sz=32" class="favicon-icon" alt="Target" /> <strong>Target</strong> — Customer Associate</p>
+        <p class="sub">↳ Supported retail operations, customer engagement, and inventory workflows while leveraging AI-powered tools to improve operational efficiency.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=theblacksheep.com&sz=32" class="favicon-icon" alt="The Black Sheep" /> <strong>The Black Sheep</strong> — Marketing & Advertising</p>
+        <p class="sub">↳ Executed campus marketing initiatives across print, digital, and social media channels, leveraging audience insights to strengthen brand visibility and engagement.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=temple.edu&sz=32" class="favicon-icon" alt="Temple" /> <strong>Brain Exercise Initiative</strong> — President & Co-Founder</p>
+        <p class="sub">↳ Founded and led Temple University's chapter of a national nonprofit, coordinating volunteer recruitment, executive operations, and community partnerships to support senior cognitive health.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=temple.edu&sz=32" class="favicon-icon" alt="Temple" /> <strong>Temple University NCAA Division I Athletics</strong> — Men's Rowing Athlete</p>
+        <p class="sub">↳ Competed in collegiate rowing while balancing intensive athletic training and STEM academics, earning gold at the 86th Annual Jefferson Dad Vail Regatta.</p>
+
+        <p style="margin-top:10px"><img src="https://www.google.com/s2/favicons?domain=temple.edu&sz=32" class="favicon-icon" alt="Temple" /> <strong>Temple University Clean-Up Club</strong> — Vice President</p>
+        <p class="sub">↳ Led community cleanup initiatives and coordinated volunteer efforts to improve environmental conditions across Philadelphia neighborhoods.</p>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT section ────────────────────────────────────────────── -->
+    <section id="contact" class="section hidden">
+      <p class="section-label">contact</p>
+      <p class="bio">feel free to reach out about anything :)</p>
+      <p class="bio"><a href="mailto:jace.roman@temple.edu">jace.roman@temple.edu</a></p>
+    </section>
+
+    <!-- Social links row -->
+    <div class="social-links" id="contact">
+      <!-- EDIT: replace href values with your actual profiles -->
+      <a href="https://x.com/Aceennw"         target="_blank" rel="noopener">x</a>
+      <a href="https://www.linkedin.com/in/jace-e-roman-707403344/" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/z5rcnws7bz-eng"        target="_blank" rel="noopener">github</a>
+      <a href="https://www.instagram.com/jacromanoo/" target="_blank" rel="noopener">instagram</a>
+    </div>
+
+    <!-- Email -->
+    <p class="email">email: <a href="mailto:jace.roman@temple.edu">jace.roman@temple.edu</a></p>
+
+    <!-- Bottom nav arrows (same as Cheryl's ← icon →) -->
+    <div class="bottom-nav">
+      <button class="arrow" id="prev-btn" aria-label="previous">←</button>
+      <span class="nav-icon">✦</span>
+      <button class="arrow" id="next-btn" aria-label="next">→</button>
+    </div>
+
+  </div><!-- /page -->
+
+  <script src="main.js"></script>
+  <script src="background.js"></script>
+</body>
+</html>
