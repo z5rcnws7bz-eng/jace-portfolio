@@ -66,6 +66,7 @@ h1 {
 /* ─── Navigation ──────────────────────────────────────────────────────── */
 nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 36px;
 }

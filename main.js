@@ -1,7 +1,7 @@
-// ── Section tab switching (about / projects / work / contact) ────────────
+// ── Section tab switching ───────────────────────────────────────────────
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.section');
-const sectionOrder = ['about', 'projects', 'work', 'contact'];
+const sectionOrder = ['about', 'projects', 'work', 'research', 'contact'];
 
 let currentIndex = 0;
 
