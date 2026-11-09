@@ -142,6 +142,20 @@ nav {
   padding-left: 10px;
 }
 
+/* ─── Project screenshots ────────────────────────────────────────────── */
+.project-screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 10px 10px;
+}
+
+.project-screenshots img {
+  display: block;
+  width: 72px;
+  height: auto;
+}
+
 /* ─── Research document previews ────────────────────────────────────── */
 .research-preview {
   margin: 4px 0 12px 10px;
