@@ -156,6 +156,14 @@ nav {
   height: auto;
 }
 
+.project-screenshots--wide a {
+  width: min(100%, 420px);
+}
+
+.project-screenshots--wide img {
+  width: 100%;
+}
+
 /* ─── Research document previews ────────────────────────────────────── */
 .research-preview {
   margin: 4px 0 12px 10px;
