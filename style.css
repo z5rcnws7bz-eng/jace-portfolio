@@ -110,6 +110,10 @@ nav {
   line-height: 1.7;
 }
 
+.bio-extra + .bio-extra {
+  margin-top: 0;
+}
+
 /* ─── Section label (like "recently") ────────────────────────────────── */
 .section-label {
   font-size: 0.82rem;
