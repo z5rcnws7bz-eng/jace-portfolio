@@ -43,5 +43,16 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft')  document.getElementById('prev-btn').click();
 });
 
+// ── Research heading counts its own entries ───────────────────────────────
+// Each research entry starts with a bold title line (<p><strong>…</strong></p>),
+// so adding or removing an entry in index.html updates the number automatically.
+function updateResearchCount() {
+  const label = document.getElementById('research-label');
+  if (!label) return;
+  const count = document.querySelectorAll('#research .recently-box > p:not(.sub) > strong').length;
+  label.textContent = `research-items (${count})`;
+}
+updateResearchCount();
+
 // ── Start on about ────────────────────────────────────────────────────────
 showSection('about');
