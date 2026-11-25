@@ -173,6 +173,13 @@ nav {
   width: 100%;
 }
 
+/* Landscape app screenshots need more width than portrait phone shots */
+.project-screenshots--wide img {
+  width: 150px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
 /* ─── Research document previews ────────────────────────────────────── */
 .research-preview {
   margin: 4px 0 12px 10px;
